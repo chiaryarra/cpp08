@@ -23,6 +23,11 @@ public:
     int     longestSpan(void);
 
     template <typename It>
-    void    addRange(It begin, It end);
+    void    addRange(It begin, It end)
+    {
+        if (_numbers.size() + std::distance(begin, end) > this->_maxSize)
+            throw std::runtime_error("Span is full!");
+        _numbers.insert(_numbers.end(), begin, end);
+    }
 };
 

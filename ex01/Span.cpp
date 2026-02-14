@@ -38,7 +38,7 @@ int Span::shortestSpan(void) {
     std::vector<int> temp = _numbers;
     std::sort(temp.begin(), temp.end());
     int minSpan = temp[1] - temp[0];
-    for (int i = 1; i < temp.size() - 1; i++)
+    for (unsigned int i = 1; i < temp.size() - 1; i++)
     {
         int dif = temp[i + 1] - temp[i];
         if (dif < minSpan)
@@ -55,4 +55,3 @@ int Span::longestSpan(void) {
 
     return (max - min);
 }
-
